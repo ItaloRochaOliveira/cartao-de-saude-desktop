@@ -21,12 +21,12 @@ public class VacinaDatabaseMock {
         new Vacina("12", "Rotavírus", "Vacina contra o rotavírus.", "EFG909", "Vários fabricantes"),
         new Vacina("13", "HPV (Papilomavírus Humano)", "Vacina contra o vírus do papiloma humano.", "HIJ010", "Vários fabricantes")));
 
-    public void registerNewVacina(Vacina vacina){
-        vacinas.add(vacina);
-    }
-
     public String searchAllVacinas(){
         return vacinas.toString();
+    }
+
+    public ArrayList<Vacina> searchAllVacinasFor(){
+        return vacinas;
     }
 
     public Vacina searchVacina(String vacinaForSeach){
@@ -40,4 +40,11 @@ public class VacinaDatabaseMock {
     }
     
 
+    public boolean addNewVacina(String id, String nome, String descricao, String lote, String fabricante){
+        Vacina vacina = new Vacina(id, nome, descricao, lote, fabricante);
+
+        vacinas.add(vacina);
+
+        return vacina.getNome().length() != 0;
+    }
 }
