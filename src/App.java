@@ -5,39 +5,39 @@ import javax.swing.JOptionPane;
 
 import Database.VacinaDatabaseMock;
 import Models.Vacina;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class App {
+public class App extends Application{
     private static Scanner scanner = new Scanner(System.in);
 
     private static VacinaDatabaseMock vacinas = new VacinaDatabaseMock();
 
     public static void main(String[] args) throws Exception {
-        //questão
+        launch(args);
+    }
 
-        StringBuilder message = new StringBuilder();
-        message.append("Pesquise dentre as vacinas a desejada \n");
-        // JOptionPane.showMessageDialog(null, "Pesquise dentre as vacinas a desejada" + "\n");
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+       try {
+        System.out.println(getClass().getResource("/View/menu.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
 
-        ArrayList<Vacina> vacinaList = vacinas.searchAllVacinasFor();
-      
+        fxmlLoader.setLocation(getClass().getResource("/View/menu.fxml"));
 
-        for (int i = 0; i < vacinaList.size(); i++) {
-            message.append( i + ": " + vacinaList.get(i).getNome() + "\n");
-            // JOptionPane.showMessageDialog(null, vacinaList.get(i).getNome() + "\n");
-        }
+        Parent root = fxmlLoader.load();
+    
+        Scene tela = new Scene(root);
 
-        String resposta = JOptionPane.showInputDialog(message.toString());
-
-        JOptionPane.showMessageDialog(null, vacinas.searchVacina(resposta));
+        primaryStage.setTitle("Cartão de Vacina para Todos");
+        primaryStage.setScene(tela);
+        primaryStage.show();
+       } catch (Exception e) {
+            e.printStackTrace();
+       }
         
-
-        // System.out.println(vacina.searchAllVacinas());
-
-        // System.out.println("Informe qual vacina deseje pesquisar");
-
-        // System.out.println(vacina.searchVacina(scanner.nextLine()));
-
-        //resposta
-        //JOptionPane.showMessageDialog(null, resposta);
     }
 }
