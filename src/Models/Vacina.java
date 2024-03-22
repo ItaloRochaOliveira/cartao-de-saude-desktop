@@ -7,8 +7,6 @@ public class Vacina {
     private String lote;
     private String fabricante;
 
-    
-
     public Vacina(String id, String nome, String descricao, String lote, String fabricante) {
         this.id = id;
         this.nome = nome;
@@ -17,15 +15,9 @@ public class Vacina {
         this.fabricante = fabricante;
     }
 
-    
-
-
     public String getNome() {
         return nome;
     }
-
-
-
 
     @Override
     public String toString() {

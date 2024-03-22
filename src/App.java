@@ -9,6 +9,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class App extends Application{
@@ -22,12 +25,9 @@ public class App extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-       try {
-        System.out.println(getClass().getResource("/View/menu.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader();
-
-        fxmlLoader.setLocation(getClass().getResource("/View/menu.fxml"));
-
+    
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/menu.fxml"));
+        
         Parent root = fxmlLoader.load();
     
         Scene tela = new Scene(root);
@@ -35,9 +35,9 @@ public class App extends Application{
         primaryStage.setTitle("Cartão de Vacina para Todos");
         primaryStage.setScene(tela);
         primaryStage.show();
-       } catch (Exception e) {
-            e.printStackTrace();
-       }
+      
         
     }
+
+   
 }
