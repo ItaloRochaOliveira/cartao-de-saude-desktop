@@ -40,28 +40,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuApp">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
-            <Menu mnemonicParsing="false" text="Vacina">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="novo" />
-                  <MenuItem mnemonicParsing="false" text="consultar" />
-               </items>
-            </Menu>
-        <Menu mnemonicParsing="false" text="Paciente">
-          <items>
-            <MenuItem mnemonicParsing="false" text="novo" />
-            <MenuItem mnemonicParsing="false" text="consultar" />
-          </items>
+        <Menu fx:id="menuVacina" mnemonicParsing="false" text="Vacina" onAction="#handleMenuVacinaClick">
+          
         </Menu>
-            <Menu mnemonicParsing="false" text="Cartão de vacina">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="novo" />
-                  <MenuItem mnemonicParsing="false" text="consultar" />
-               </items>
-            </Menu>
+        <Menu mnemonicParsing="false" text="Paciente">
+        
+        </Menu>
+        <Menu mnemonicParsing="false" text="Cartão de vacina">
+          
+        </Menu>
         <Menu mnemonicParsing="false" text="Help">
           <items>
             <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
