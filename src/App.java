@@ -15,8 +15,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class App extends Application{
-    private static Scanner scanner = new Scanner(System.in);
-
     private static VacinaDatabaseMock vacinas = new VacinaDatabaseMock();
 
     public static void main(String[] args) throws Exception {
