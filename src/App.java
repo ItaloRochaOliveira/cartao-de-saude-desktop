@@ -1,22 +1,10 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-
-import javax.swing.JOptionPane;
-
-import Database.VacinaDatabaseMock;
-import Models.Vacina;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class App extends Application{
-    private static VacinaDatabaseMock vacinas = new VacinaDatabaseMock();
-
     public static void main(String[] args) throws Exception {
         launch(args);
     }

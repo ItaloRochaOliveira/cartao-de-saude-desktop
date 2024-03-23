@@ -21,11 +21,7 @@ public class VacinaDatabaseMock {
         new Vacina("12", "Rotavírus", "Vacina contra o rotavírus.", "EFG909", "Vários fabricantes"),
         new Vacina("13", "HPV (Papilomavírus Humano)", "Vacina contra o vírus do papiloma humano.", "HIJ010", "Vários fabricantes")));
 
-    public String searchAllVacinas(){
-        return vacinas.toString();
-    }
-
-    public ArrayList<Vacina> searchAllVacinasFor(){
+    public ArrayList<Vacina> searchAllVacinas(){
         return vacinas;
     }
 

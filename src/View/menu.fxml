@@ -45,16 +45,17 @@
     <MenuBar VBox.vgrow="NEVER">
     
       <menus>
-            <Menu fx:id="opcoes" mnemonicParsing="false" onAction="#handleMenuVacinaClick" text="Vacina">
+            <Menu mnemonicParsing="false"  text="Vacina">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Open" />
+                  <MenuItem fx:id="opcoes" mnemonicParsing="false" text="Open" onAction="#handleMenuVacinaClick"/>
                </items>
             </Menu>
        
         <Menu fx:id="pacienteItem" mnemonicParsing="false" text="Paciente">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Open" />
-               </items></Menu>
+                  <MenuItem fx:id="opcoes" mnemonicParsing="false" text="Open" />
+               </items>
+        </Menu>
         <Menu mnemonicParsing="false" text="Cartão de vacina">
                <items>
                   <MenuItem mnemonicParsing="false" text="Open" />
