@@ -3,17 +3,22 @@ package Controller;
 import Models.Vacina;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import Database.VacinaDatabaseMock;
 
 public class VacinaController {
     private static VacinaDatabaseMock vacinasdatabaseMock = new VacinaDatabaseMock();
+    @FXML
+    public AnchorPane anchonPaneSearchOption;
 
     
     @FXML
@@ -23,13 +28,25 @@ public class VacinaController {
     public TextField pesquisa;
 
     @FXML
+    public Label nomeValue;
+    @FXML
+    public Label descricaoValue;
+    @FXML
+    public Label loteValue;
+    @FXML
+    public Label fabricanteValue;
+
+    @FXML
     public void initialize() {
-        adicionarLinhasDinamicamente();
+        if(showItems != null){
+            adicionarLinhasDinamicamente();
+        }
+
     }
     
 
     public void adicionarLinhasDinamicamente() {
-        if(showItems != null){
+        
             ArrayList vacinasArray = vacinasdatabaseMock.searchAllVacinas();
             // ColumnConstraints columnConstraints = new ColumnConstraints();
             // columnConstraints.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
@@ -39,7 +56,8 @@ public class VacinaController {
 
             showItems.prefHeight((vacinasArray.size() + 1) * 34);
 
-            for (Vacina vacina : vacinasdatabaseMock.searchAllVacinas()) {
+            for (int i = 0; i < vacinasArray.size(); i++){
+
                 RowConstraints rowConstraints = new RowConstraints();
                 rowConstraints.setMaxHeight(76.0);
                 rowConstraints.setMinHeight(10.0);
@@ -47,9 +65,7 @@ public class VacinaController {
                 rowConstraints.setVgrow(javafx.scene.layout.Priority.SOMETIMES);
 
                 showItems.getRowConstraints().add(rowConstraints);
-            }
 
-            for (int i = 0; i < vacinasArray.size(); i++){
                 Vacina item = (Vacina) vacinasArray.get(i);
                 Label label = new Label(item.getNome());
                 label.setPrefHeight(34.0);
@@ -59,10 +75,26 @@ public class VacinaController {
         
                 showItems.getChildren().add(label);
             }
-        }
     }
 
-    public void pesquisarItem(ActionEvent event){
-        System.out.println(pesquisa.getText());;
+    public void pesquisarItem(ActionEvent event) throws IOException{
+        Vacina vacinaPesquisada = vacinasdatabaseMock.searchVacina(pesquisa.getText());
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/vacinaPesquisaLayout.fxml"));
+        AnchorPane layout = loader.load();
+        
+        anchonPaneSearchOption.getChildren().clear();
+        anchonPaneSearchOption.getChildren().add(layout);
+
+        VacinaController controller = loader.getController();
+        controller.setVacinaValues(vacinaPesquisada.getNome(), vacinaPesquisada.getDescricao(), vacinaPesquisada.getLote(), vacinaPesquisada.getFabricante());
+
+    }
+
+    public void setVacinaValues(String nome, String descricao, String lote, String fabricante) {
+        nomeValue.setText(nome);
+        descricaoValue.setText(descricao);
+        loteValue.setText(lote);
+        fabricanteValue.setText(fabricante);
     }
 }

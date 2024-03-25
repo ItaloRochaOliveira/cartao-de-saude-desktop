@@ -17,6 +17,18 @@ public class Vacina {
 
     public String getNome() {
         return nome;
+    } 
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public String getLote() {
+        return lote;
+    }
+
+    public String getFabricante() {
+        return fabricante;
     }
 
     @Override
