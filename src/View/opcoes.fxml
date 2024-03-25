@@ -22,7 +22,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <AnchorPane prefHeight="372.0" prefWidth="600.0">
+                        <AnchorPane prefHeight="372.0" prefWidth="600.0" fx:id="anchonPaneSearchOption">
                            <children>
                               <GridPane layoutX="42.0" layoutY="40.0" prefHeight="28.0" prefWidth="481.0" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="40.0">
                                 <columnConstraints>
@@ -41,14 +41,16 @@
                                     </Button>
                                  </children>
                               </GridPane>
-                              <ScrollPane xmlns:fx="http://javafx.com/fxml" fitToWidth="true" fitToHeight="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS" layoutX="42.0" layoutY="96.0">
+                              <AnchorPane prefHeight="372.0" prefWidth="600.0" layoutX="42.0" layoutY="96.0">
+                                 <ScrollPane xmlns:fx="http://javafx.com/fxml" fitToWidth="true" fitToHeight="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS">
                                 <GridPane fx:id="showItems" minHeight="10"
-                                minWidth="10" layoutX="42.0" layoutY="96.0"  >
+                                minWidth="10" >
                                   <columnConstraints>
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                                   </columnConstraints>
                                 </GridPane>
                               </ScrollPane>
+                              </AnchorPane>
                            </children>
                         </AnchorPane>
                      </children>
