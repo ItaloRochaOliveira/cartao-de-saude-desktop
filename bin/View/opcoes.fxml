@@ -65,7 +65,7 @@
                            <children>
                               <TextField fx:id="nomeInput" layoutX="178.0" layoutY="87.0" prefHeight="25.0" prefWidth="299.0" />
                               <TextField fx:id="loteInput" layoutX="178.0" layoutY="187.0" prefHeight="25.0" prefWidth="299.0" />
-                              <TextField fx:id="descricao" layoutX="178.0" layoutY="137.0" prefHeight="25.0" prefWidth="299.0" />
+                              <TextField fx:id="descricaoInput" layoutX="178.0" layoutY="137.0" prefHeight="25.0" prefWidth="299.0" />
                               <TextField fx:id="fabricanteInput" layoutX="178.0" layoutY="236.0" prefHeight="25.0" prefWidth="299.0" />
                               <Text layoutX="93.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:">
                                  <font>
@@ -87,7 +87,7 @@
                                     <Font size="17.0" />
                                  </font>
                               </Text>
-                              <Button fx:id="salvarButton" layoutX="425.0" layoutY="307.0" mnemonicParsing="false" text="Salvar" />
+                              <Button fx:id="salvarButton" anAction="#savarVacina" layoutX="425.0" layoutY="307.0" mnemonicParsing="false" text="Salvar" />
                            </children>
                         </AnchorPane>
                      </children></AnchorPane>

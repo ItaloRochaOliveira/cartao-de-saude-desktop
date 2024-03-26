@@ -27,6 +27,7 @@ public class VacinaController {
     @FXML
     public TextField pesquisa;
 
+    //Valores para imprimir
     @FXML
     public Label nomeValue;
     @FXML
@@ -35,6 +36,16 @@ public class VacinaController {
     public Label loteValue;
     @FXML
     public Label fabricanteValue;
+
+    //valores para receber dados
+    @FXML
+    public Label nomeInput;
+    @FXML
+    public Label descricaoInput;
+    @FXML
+    public Label loteInput;
+    @FXML
+    public Label fabricanteInput;
 
     @FXML
     public void initialize() {
@@ -97,4 +108,11 @@ public class VacinaController {
         loteValue.setText(lote);
         fabricanteValue.setText(fabricante);
     }
+
+    // public void savarVacina(ActionEvent event){
+    //     FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/opcoes.fxml"));
+
+    //     VacinaController controller = loader.getController();
+    //     controller.descricaoInput();
+    // }
 }
