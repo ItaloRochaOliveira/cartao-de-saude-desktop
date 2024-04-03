@@ -13,10 +13,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VacinaController">
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VacinaController">
    <children>
-      <TabPane layoutY="-2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+     <TabPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" VBox.vgrow="ALWAYS" minWidth="10" minHeight="20" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Pesquisar">
             <content>
@@ -65,7 +66,7 @@
                            <children>
                               <TextField fx:id="nomeInput" layoutX="178.0" layoutY="87.0" prefHeight="25.0" prefWidth="299.0" />
                               <TextField fx:id="loteInput" layoutX="178.0" layoutY="187.0" prefHeight="25.0" prefWidth="299.0" />
-                              <TextField fx:id="descricao" layoutX="178.0" layoutY="137.0" prefHeight="25.0" prefWidth="299.0" />
+                              <TextField fx:id="descricaoInput" layoutX="178.0" layoutY="137.0" prefHeight="25.0" prefWidth="299.0" />
                               <TextField fx:id="fabricanteInput" layoutX="178.0" layoutY="236.0" prefHeight="25.0" prefWidth="299.0" />
                               <Text layoutX="93.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:">
                                  <font>
@@ -87,7 +88,7 @@
                                     <Font size="17.0" />
                                  </font>
                               </Text>
-                              <Button fx:id="salvarButton" layoutX="425.0" layoutY="307.0" mnemonicParsing="false" text="Salvar" />
+                              <Button fx:id="salvarButton" onAction="#salvarVacina" layoutX="425.0" layoutY="307.0" mnemonicParsing="false" text="Salvar" />
                            </children>
                         </AnchorPane>
                      </children></AnchorPane>
@@ -96,4 +97,4 @@
         </tabs>
       </TabPane>
    </children>
-</AnchorPane>
+</VBox>
