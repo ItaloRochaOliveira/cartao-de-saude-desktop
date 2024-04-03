@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.control.MenuItem;
 
 
@@ -28,7 +29,7 @@ public class MenuApp {
     public void loadPage(String page){
         try {
            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/"+page + ".fxml"));
-           AnchorPane layout = loader.load();
+           VBox layout = loader.load();
 
             // Definir o novo layout carregado como o conteúdo do AnchorPane
            ap.getChildren().clear();
@@ -38,12 +39,4 @@ public class MenuApp {
             System.out.println(e);
         }
     }
-
-    // private void alert(){
-    //     Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    //     alert.setTitle("ALerta");
-    //     alert.setHeaderText("Menu ");
-    //     alert.setContentText("Texto principal");
-    //     alert.show();
-    // }
 }

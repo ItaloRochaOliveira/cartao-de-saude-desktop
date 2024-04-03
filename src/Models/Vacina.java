@@ -1,19 +1,30 @@
 package Models;
 
 public class Vacina {
-    private String id;
+    private int id;
     private String nome;
     private String descricao;
     private String lote;
     private String fabricante;
 
-    public Vacina(String id, String nome, String descricao, String lote, String fabricante) {
+    public Vacina(int id, String nome, String descricao, String lote, String fabricante) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
         this.lote = lote;
         this.fabricante = fabricante;
     }
+
+    public Vacina(String nome, String descricao, String lote, String fabricante) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.lote = lote;
+        this.fabricante = fabricante;
+    }
+
+    public int getId() {
+        return id;
+    } 
 
     public String getNome() {
         return nome;
