@@ -38,27 +38,28 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuApp">
+<VBox minHeight="400" minWidth="600" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuApp">
   <children>
-    <MenuBar VBox.vgrow="ALWAYS">
+    <MenuBar>
     
       <menus>
             <Menu mnemonicParsing="false"  text="Vacina">
                <items>
-                  <MenuItem fx:id="opcoes" mnemonicParsing="false" text="Open" onAction="#handleMenuVacinaClick"/>
+                  <MenuItem fx:id="opcoes" mnemonicParsing="false" text="Open Vacina" onAction="#handleMenuVacinaClick"/>
                </items>
             </Menu>
        
         <Menu fx:id="pacienteItem" mnemonicParsing="false" text="Paciente">
                <items>
-                  <MenuItem fx:id="opcoes" mnemonicParsing="false" text="Open" />
+                  <MenuItem fx:id="opcoes" mnemonicParsing="false" text="Open" onAction="#handleMenuVacinaClick"/>
                </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Cartão de vacina">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Open" />
+                  <MenuItem mnemonicParsing="false" text="Open" onAction="#handleMenuVacinaClick"/>
                </items></Menu>
         <Menu mnemonicParsing="false" text="Help">
           <items>
@@ -67,7 +68,7 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane fx:id="ap" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane fx:id="ap" minHeight="400" minWidth="600" VBox.vgrow="ALWAYS">
       <children>
         <!-- <Button fx:id="menuVacina" mnemonicParsing="false" text="Vacina" onAction="#handleMenuVacinaClick" /> -->
         
