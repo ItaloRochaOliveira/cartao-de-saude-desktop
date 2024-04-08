@@ -2,7 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
@@ -12,18 +12,17 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VacinaController">
+<VBox minWidth="400" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VacinaController">
    <children>
-     <TabPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" VBox.vgrow="ALWAYS" minWidth="10" minHeight="20" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutY="-2.0" minHeight="0.0" minWidth="0.0" VBox.vgrow="ALWAYS" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Pesquisar">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <AnchorPane prefHeight="372.0" prefWidth="600.0" fx:id="anchonPaneSearchOption">
+                        <AnchorPane fx:id="anchonPaneSearchOption" prefHeight="372.0" prefWidth="600.0">
                            <children>
                               <GridPane layoutX="42.0" layoutY="40.0" prefHeight="28.0" prefWidth="481.0" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="40.0">
                                 <columnConstraints>
@@ -35,17 +34,16 @@
                                 </rowConstraints>
                                  <children>
                                     <TextField fx:id="pesquisa" prefHeight="25.0" prefWidth="290.0" />
-                                    <Button fx:id="pesquisabutton" onAction="#pesquisarItem" mnemonicParsing="false" text="Button" GridPane.columnIndex="1">
+                                    <Button fx:id="pesquisabutton" mnemonicParsing="false" onAction="#pesquisarItem" text="Button" GridPane.columnIndex="1">
                                        <GridPane.margin>
                                           <Insets left="20.0" />
                                        </GridPane.margin>
                                     </Button>
                                  </children>
                               </GridPane>
-                              <AnchorPane prefHeight="372.0" prefWidth="600.0" layoutX="42.0" layoutY="96.0">
-                                 <ScrollPane xmlns:fx="http://javafx.com/fxml" fitToWidth="true" fitToHeight="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS">
-                                <GridPane fx:id="showItems" minHeight="10"
-                                minWidth="10" >
+                              <AnchorPane layoutX="42.0" layoutY="96.0" prefHeight="372.0" prefWidth="600.0">
+                                 <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS" xmlns:fx="http://javafx.com/fxml">
+                                <GridPane fx:id="showItems" minHeight="10" minWidth="10">
                                   <columnConstraints>
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                                   </columnConstraints>
@@ -68,27 +66,32 @@
                               <TextField fx:id="loteInput" layoutX="178.0" layoutY="187.0" prefHeight="25.0" prefWidth="299.0" />
                               <TextField fx:id="descricaoInput" layoutX="178.0" layoutY="137.0" prefHeight="25.0" prefWidth="299.0" />
                               <TextField fx:id="fabricanteInput" layoutX="178.0" layoutY="236.0" prefHeight="25.0" prefWidth="299.0" />
-                              <Text layoutX="93.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:">
+                              <Text fill="#404040" layoutX="93.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome">
                                  <font>
-                                    <Font size="17.0" />
+                                    <Font name="Cambria" size="17.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="93.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição:">
+                              <Button fx:id="salvarButton" layoutX="425.0" layoutY="307.0" mnemonicParsing="false" onAction="#salvarVacina" text="Salvar" textFill="#404040" />
+                              <Text fill="#404040" layoutX="93.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição">
                                  <font>
-                                    <Font size="17.0" />
+                                    <Font name="Cambria" size="17.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="93.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lote:">
+                              <Text fill="#404040" layoutX="93.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lote">
                                  <font>
-                                    <Font size="17.0" />
+                                    <Font name="Cambria" size="17.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="93.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fabricante:">
+                              <Text fill="#404040" layoutX="93.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fabricante">
                                  <font>
-                                    <Font size="17.0" />
+                                    <Font name="Cambria" size="17.0" />
                                  </font>
                               </Text>
-                              <Button fx:id="salvarButton" onAction="#salvarVacina" layoutX="425.0" layoutY="307.0" mnemonicParsing="false" text="Salvar" />
+                              <Text blendMode="SRC_ATOP" boundsType="LOGICAL_VERTICAL_CENTER" cache="true" cacheHint="SCALE" fill="#233dd0" layoutY="40.0" stroke="#d91111" strokeWidth="0.0" text="Cadastro de Vacinas" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="600.0">
+                                 <font>
+                                    <Font name="Candara Bold" size="31.0" />
+                                 </font>
+                              </Text>
                            </children>
                         </AnchorPane>
                      </children></AnchorPane>

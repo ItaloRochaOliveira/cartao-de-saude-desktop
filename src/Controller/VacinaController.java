@@ -19,10 +19,7 @@ import Database.VacinaDatabaseMock;
 
 public class VacinaController {
     private static VacinaDatabaseMock vacinasdatabaseMock = new VacinaDatabaseMock();
-    
-    @FXML
-    public AnchorPane anchonPaneSearchOption;
-    
+
     @FXML
     public GridPane showItems;
 
@@ -95,11 +92,11 @@ public class VacinaController {
     public void pesquisarItem(ActionEvent event) throws IOException{
         Vacina vacinaPesquisada = vacinasdatabaseMock.searchVacina(pesquisa.getText());
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/vacinaPesquisaLayout.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/vacinaLayout/vacinaPesquisaLayout.fxml"));
         AnchorPane layout = loader.load();
         
-        anchonPaneSearchOption.getChildren().clear();
-        anchonPaneSearchOption.getChildren().add(layout);
+        showItems.getChildren().clear();
+        showItems.getChildren().add(layout);
 
         VacinaController controller = loader.getController();
         controller.setVacinaValues(vacinaPesquisada.getNome(), vacinaPesquisada.getDescricao(), vacinaPesquisada.getLote(), vacinaPesquisada.getFabricante());
@@ -118,6 +115,7 @@ public class VacinaController {
 
         if (result) {
             alert(vacinasdatabaseMock.searchVacina(nomeInput.getText()));
+            adicionarLinhasDinamicamente();
         } else{
             System.out.println("Erro");
         }
