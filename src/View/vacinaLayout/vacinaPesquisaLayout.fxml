@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,10 +10,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VacinaController"> 
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VacinaController"> 
    <children>
-      <GridPane layoutX="79.0" layoutY="200" prefHeight="247.0" prefWidth="397.0">
+      <GridPane layoutX="79.0" layoutY="220" prefHeight="247.0" prefWidth="397.0" style="-fx-border-color: black;" AnchorPane.leftAnchor="79.0" AnchorPane.rightAnchor="134.0">
         <columnConstraints>
           <ColumnConstraints hgrow="ALWAYS" />
           <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" />
@@ -24,33 +24,57 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Nome da Vacina">
+            <Label prefHeight="62.0" prefWidth="185.0" style="-fx-border-color: black;" text="Nome da Vacina">
                <font>
                   <Font name="Cambria" size="17.0" />
                </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </Label>
-            <Label text="Descrição" GridPane.rowIndex="1">
+            <Label prefHeight="80.0" prefWidth="185.0" style="-fx-border-color: black;" text="Descrição" GridPane.rowIndex="1">
                <font>
                   <Font name="Cambria" size="17.0" />
                </font>
+               <opaqueInsets>
+                  <Insets right="1.0" top="1.0" />
+               </opaqueInsets>
             </Label>
-            <Label text="Data" GridPane.rowIndex="2">
+            <Label prefHeight="71.0" prefWidth="185.0" style="-fx-border-color: black;" text="Data" GridPane.rowIndex="2">
                <font>
                   <Font name="Cambria" size="17.0" />
                </font>
+               <opaqueInsets>
+                  <Insets right="1.0" top="1.0" />
+               </opaqueInsets>
             </Label>
-            <Label text="Lote" GridPane.rowIndex="3">
+            <Label prefHeight="64.0" prefWidth="185.0" style="-fx-border-color: black;" text="Lote" GridPane.rowIndex="3">
                <font>
                   <Font name="Cambria" size="17.0" />
                </font>
+               <opaqueInsets>
+                  <Insets right="1.0" top="1.0" />
+               </opaqueInsets>
             </Label>
-            <Label fx:id="nomeValue" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
+            <Label fx:id="nomeValue" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-border-color: black;" GridPane.columnIndex="1">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></Label>
             
-            <Label fx:id="descricaoValue" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="62.0" prefWidth="212.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="descricaoValue" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="62.0" prefWidth="212.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <opaqueInsets>
+                  <Insets right="1.0" top="1.0" />
+               </opaqueInsets></Label>
             
-            <Label fx:id="loteValue" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="loteValue" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <opaqueInsets>
+                  <Insets right="1.0" top="1.0" />
+               </opaqueInsets></Label>
             
-            <Label fx:id="fabricanteValue" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="fabricanteValue" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <opaqueInsets>
+                  <Insets right="1.0" top="1.0" />
+               </opaqueInsets></Label>
          </children>
       </GridPane>
       <Text blendMode="SRC_ATOP" boundsType="LOGICAL_VERTICAL_CENTER" cache="true" cacheHint="SCALE" fill="#233dd0" layoutX="10.0" layoutY="43.0" stroke="#d91111" strokeWidth="0.0" text="Resultado da Pesquisa" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="600.0">
