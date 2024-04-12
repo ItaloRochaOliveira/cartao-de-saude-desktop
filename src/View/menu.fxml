@@ -41,7 +41,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox minHeight="400" minWidth="600" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuApp">
+<VBox minHeight="400" minWidth="600" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuApp">
   <children>
     <MenuBar>
     
@@ -54,7 +54,7 @@
        
         <Menu fx:id="pacienteItem" mnemonicParsing="false" text="Paciente">
                <items>
-                  <MenuItem fx:id="opcoes" mnemonicParsing="false" text="Open" onAction="#handleMenuVacinaClick"/>
+                  <MenuItem fx:id="opcoes" mnemonicParsing="false" text="Open Paciente" onAction="#handleMenuVacinaClick"/>
                </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Cartão de vacina">

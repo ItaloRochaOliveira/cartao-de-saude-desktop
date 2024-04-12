@@ -1,12 +1,12 @@
 package Models;
 
 public class Paciente {
-    private String id;
+    private int id;
     private String cpf;
     private String nome;
     private String dataNascimento;
     private String cep;
-    private int idade;
+    private String idade;
     private String endereco;
     private String nacionalidade;
     private String telefone;
@@ -14,7 +14,7 @@ public class Paciente {
     private String etnia;
     private String estadoCivil;
 
-    public Paciente(String id, String cpf, String nome, String dataNascimento, String cep, int idade, String endereco, String nacionalidade, String telefone, String sexoBiologico, String etnia, String estadoCivil) {
+    public Paciente(int id, String cpf, String nome, String dataNascimento, String cep, String idade, String endereco, String nacionalidade, String telefone, String sexoBiologico, String etnia, String estadoCivil) {
         this.id = id;
         this.cpf = cpf;
         this.nome = nome;
@@ -27,6 +27,21 @@ public class Paciente {
         this.sexoBiologico = sexoBiologico;
         this.etnia = etnia;
         this.estadoCivil = estadoCivil;
+    }
+ 
+    public Paciente(int id, String cpf, String nome, String dataNascimento, String cep, String nacionalidade, String sexoBiologico) {
+        this.id = id;
+        this.cpf = cpf;
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.cep = cep;
+        this.idade = null;
+        this.endereco = null;
+        this.nacionalidade = nacionalidade;
+        this.telefone = null;
+        this.sexoBiologico = sexoBiologico;
+        this.etnia = null;
+        this.estadoCivil = null;
     }
 
     // Getters e Setters
@@ -48,7 +63,7 @@ public class Paciente {
         return cep;
     }
 
-    public int getIdade() {
+    public String getIdade() {
         return idade;
     }
 
@@ -74,6 +89,10 @@ public class Paciente {
 
     public String getEstadoCivil() {
         return estadoCivil;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override

@@ -26,7 +26,7 @@ public class MenuApp {
 
         if (menu.getText().equals("Open Vacina")) {
             loadPage("/View/vacinaLayout/" + menu.getId() + ".fxml");
-        } else if(menu.getId() == "opcoesPaciente"){
+        } else if(menu.getText().equals("Open Paciente")){
             loadPage("/View/pacienteLayout/" + menu.getId() + ".fxml");
         } else if(menu.getId() == "opcoesCartao"){
             loadPage("/View/cartaoLayout/" + menu.getId() + ".fxml");
