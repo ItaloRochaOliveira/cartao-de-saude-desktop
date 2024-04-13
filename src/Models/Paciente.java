@@ -1,10 +1,12 @@
 package Models;
 
+import java.time.LocalDate;
+
 public class Paciente {
     private int id;
     private String cpf;
     private String nome;
-    private String dataNascimento;
+    private LocalDate dataNascimento;
     private String cep;
     private String idade;
     private String endereco;
@@ -14,7 +16,7 @@ public class Paciente {
     private String etnia;
     private String estadoCivil;
 
-    public Paciente(int id, String cpf, String nome, String dataNascimento, String cep, String idade, String endereco, String nacionalidade, String telefone, String sexoBiologico, String etnia, String estadoCivil) {
+    public Paciente(int id, String cpf, String nome, LocalDate dataNascimento, String cep, String idade, String endereco, String nacionalidade, String telefone, String sexoBiologico, String etnia, String estadoCivil) {
         this.id = id;
         this.cpf = cpf;
         this.nome = nome;
@@ -29,7 +31,7 @@ public class Paciente {
         this.estadoCivil = estadoCivil;
     }
  
-    public Paciente(int id, String cpf, String nome, String dataNascimento, String cep, String nacionalidade, String sexoBiologico) {
+    public Paciente(int id, String cpf, String nome, LocalDate dataNascimento, String cep, String nacionalidade, String sexoBiologico) {
         this.id = id;
         this.cpf = cpf;
         this.nome = nome;
@@ -55,7 +57,7 @@ public class Paciente {
         return nome;
     }
 
-    public String getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 

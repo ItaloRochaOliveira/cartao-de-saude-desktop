@@ -88,11 +88,11 @@
                                     <Label text="Cidade Nascimento:" GridPane.rowIndex="3" />
                                     <Label text="Estado Nascimento:" GridPane.rowIndex="4" />
                                     <Label text="Sexo:" GridPane.rowIndex="5" />
-                                    <TextField promptText="Nome do Paciente...." GridPane.columnIndex="1" />
-                                    <TextField promptText="Digite o CPF..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <TextField promptText="Ex.: Goiânia..." GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                    <TextField promptText="Ex.: Goiás..." GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                    <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                   <TextField fx:id="nomeInput" promptText="Nome do Paciente...." GridPane.columnIndex="1" />
+                                    <TextField fx:id="cpfInput" promptText="Digite o CPF..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="cepInput" promptText="Ex.: Goiânia..." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextField fx:id="nacionalidadeInput" promptText="Ex.: Brasileiro..." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <DatePicker fx:id="dataNascimentoInput" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                     <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Selecione o Sexo..." GridPane.columnIndex="1" GridPane.rowIndex="5" />
                                  </children>
                               </GridPane>

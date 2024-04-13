@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -56,27 +57,27 @@ public class PacienteController {
 
     // Valores para salvar
     @FXML
-    public Label cpfInput;
+    public TextField cpfInput;
     @FXML
-    public Label nomeInput;
+    public TextField nomeInput;
     @FXML
-    public Label dataNascimentoInput;
+    public DatePicker dataNascimentoInput;
     @FXML
-    public Label cepInput;
+    public TextField cepInput;
+    // @FXML
+    // public TextField idadeInput;
+    // @FXML
+    // public TextField enderecoInput;
     @FXML
-    public Label idadeInput;
+    public TextField nacionalidadeInput;
+    // @FXML
+    // public TextField telefoneInput;
     @FXML
-    public Label enderecoInput;
-    @FXML
-    public Label nacionalidadeInput;
-    @FXML
-    public Label telefoneInput;
-    @FXML
-    public Label sexoBiologicoInput;
-    @FXML
-    public Label etniaInput;
-    @FXML
-    public Label estadoCivilInput;
+    public TextField sexoBiologicoInput;
+    // @FXML
+    // public TextField etniaInput;
+    // @FXML
+    // public TextField estadoCivilInput;
     @FXML
     private ComboBox<String> comboBox;
     private String selectedOption;
@@ -93,11 +94,14 @@ public class PacienteController {
             "Feminino",
             "Prefiro não informar"
         );
-        comboBox.setItems(items);
+       
+        if (comboBox != null) {
+            comboBox.setItems(items);
 
-        comboBox.setOnAction(e -> {
-            selectedOption = comboBox.getValue();
-        });
+            comboBox.setOnAction(e -> {
+                selectedOption = comboBox.getValue();
+            });
+        }
 
     }
     
@@ -144,7 +148,7 @@ public class PacienteController {
         anchonPaneSearchOption.getChildren().add(layout);
 
         PacienteController controller = loader.getController();
-        controller.setPacienteValues(pacientePesquisada.getCpf(), pacientePesquisada.getNome(), pacientePesquisada.getDataNascimento(), pacientePesquisada.getCep(), pacientePesquisada.getIdade(), 
+        controller.setPacienteValues(pacientePesquisada.getCpf(), pacientePesquisada.getNome(), pacientePesquisada.getDataNascimento().toString(), pacientePesquisada.getCep(), pacientePesquisada.getIdade(), 
         pacientePesquisada.getEndereco(), pacientePesquisada.getNacionalidade(), pacientePesquisada.getTelefone(), pacientePesquisada.getSexoBiologico(), pacientePesquisada.getEtnia(), pacientePesquisada.getEstadoCivil());
 
     }
@@ -165,10 +169,10 @@ public class PacienteController {
 
     public void salvarVacina(ActionEvent event){
         System.out.println("entrou");
-        Boolean result = pacientesdatabaseMock.addNewPaciente(cpfValue.getText(), nomeValue.getText(), dataNascimentoValue.getText(), cepValue.getText(), "01/01/2001", nacionalidadeValue.getText(), selectedOption);
+        Boolean result = pacientesdatabaseMock.addNewPaciente(cpfInput.getText(), nomeInput.getText(), dataNascimentoInput.getValue(), cepInput.getText(), "01/01/2001", nacionalidadeInput.getText(), selectedOption);
 
         if (result) {
-            alert(pacientesdatabaseMock.searchPaciente(nomeValue.getText()));
+            alert(pacientesdatabaseMock.searchPaciente(nomeInput.getText()));
             adicionarLinhasDinamicamente();
         } else{
             System.out.println("Erro");
