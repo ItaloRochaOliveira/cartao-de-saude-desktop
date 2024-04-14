@@ -58,28 +58,34 @@ public class CartaoDeVacinaDatabaseMock {
         return false;
     }
 
-    public boolean adicionarVacinaAoCartao(String nomePaciente, String vacina) {
-        CartaoDeVacina cartaoDeVacinaExist = searchCartaoDeVacina(nomePaciente);
+    public boolean adicionarVacinaAoCartao(String cpfPaciente, String vacina) {
+        
+
+        CartaoDeVacina cartaoDeVacinaExist = searchCartaoDeVacina(cpfPaciente);
 
         if (cartaoDeVacinaExist != null) {
             cartaoDeVacinaExist.adicionarVacina(vacina);
             return true;
+        } else if (cartaoDeVacinaExist == null) {
+            Paciente paciente = pacienteDatabaseMock.searchPacienteCpf(cpfPaciente);
+
+            if (paciente == null) {
+                CartaoDeVacina cartaoDeVacina = new CartaoDeVacina(newId(), cpfPaciente);
+
+                cartaoDeVacina.adicionarVacina(vacina);
+
+                cartoesDeVacina.add(cartaoDeVacina);
+            }
         }
 
         return false;
     }
 
-    public boolean adicionarVacinaAoCartaoComCpf(String cpf, String vacina) {
-        Paciente paciente = pacienteDatabaseMock.searchPacienteCpf(cpf);
+    // public boolean adicionarVacinaAoCartaoComCpf(String cpf, String vacina) {
+        
 
-        if (paciente != null) {
-            CartaoDeVacina cartaoDeVacina = new CartaoDeVacina(newId(), cpf);
-
-            cartoesDeVacina.add(cartaoDeVacina);
-        }
-
-        return false;
-    }
+    //     return false;
+    // }
 
     private int newId(){
         return cartoesDeVacina.get(cartoesDeVacina.size() - 1).getId() + 1;
