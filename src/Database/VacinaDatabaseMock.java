@@ -27,7 +27,7 @@ public class VacinaDatabaseMock {
 
     public Vacina searchVacina(String vacinaForSeach){
         for(Vacina vacina : vacinas){
-            if(vacina.getNome().toLowerCase().contains(vacinaForSeach)){
+            if(vacina.getNome().toLowerCase().contains(vacinaForSeach.toLowerCase())){
                 return vacina;
             }
         }

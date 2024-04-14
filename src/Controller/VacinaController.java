@@ -57,7 +57,7 @@ public class VacinaController {
 
     public void adicionarLinhasDinamicamente() {
         
-            ArrayList vacinasArray = vacinasdatabaseMock.searchAllVacinas();
+            ArrayList<Vacina> vacinasArray = vacinasdatabaseMock.searchAllVacinas();
 
             ColumnConstraints columnConstraints = new ColumnConstraints();
             columnConstraints.setHgrow(javafx.scene.layout.Priority.ALWAYS);
