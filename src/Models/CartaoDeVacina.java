@@ -3,20 +3,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CartaoDeVacina {
-    private String nomePaciente;
+    private int id;
+    private String cpfPaciente;
     private List<String> vacinasTomadas;
 
-    public CartaoDeVacina(String nomePaciente) {
-        this.nomePaciente = nomePaciente;
+    public CartaoDeVacina(int id, String cpfPaciente) {
+        this.id = id;
+        this.cpfPaciente = cpfPaciente;
         this.vacinasTomadas = new ArrayList<>();
     }
 
-    public String getNomePaciente() {
-        return nomePaciente;
+    public int getId(){
+        return id;
     }
 
-    public void setNomePaciente(String nomePaciente) {
-        this.nomePaciente = nomePaciente;
+    public String getCpfPaciente() {
+        return cpfPaciente;
+    }
+
+    public void setCpfPaciente(String cpfPaciente) {
+        this.cpfPaciente = cpfPaciente;
     }
 
     public List<String> getVacinasTomadas() {

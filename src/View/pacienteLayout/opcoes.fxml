@@ -28,7 +28,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <AnchorPane fx:id="anchonPaneSearchOption" prefHeight="372.0" prefWidth="600.0">
+                        <AnchorPane prefHeight="372.0" prefWidth="600.0">
                            <children>
                               <GridPane layoutX="42.0" layoutY="40.0" prefHeight="28.0" prefWidth="481.0" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="40.0">
                                 <columnConstraints>
@@ -47,7 +47,7 @@
                                     </Button>
                                  </children>
                               </GridPane>
-                              <AnchorPane layoutX="42.0" layoutY="96.0" prefHeight="372.0" prefWidth="600.0">
+                              <AnchorPane fx:id="anchonPaneSearchOption" layoutX="42.0" layoutY="96.0" prefHeight="372.0" prefWidth="600.0">
                                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS" xmlns:fx="http://javafx.com/fxml">
                                 <GridPane fx:id="showItems" minHeight="10" minWidth="10">
                                   <columnConstraints>

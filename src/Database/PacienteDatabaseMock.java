@@ -31,6 +31,16 @@ public class PacienteDatabaseMock {
        
         return null;
     }
+
+    public Paciente searchPacienteCpf(String pacienteForSeach){
+        for(Paciente paciente : pacientes){
+            if(paciente.getCpf().toLowerCase().contains(pacienteForSeach)){
+                return paciente;
+            }
+        }
+       
+        return null;
+    }
     
 
     public boolean addNewPaciente(String cpf, String nome, LocalDate dataNascimento, String cep, String idade, String nacionalidade, String sexoBiologico){

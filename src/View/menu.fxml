@@ -59,7 +59,7 @@
         </Menu>
         <Menu mnemonicParsing="false" text="Cartão de vacina">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Open" onAction="#handleMenuVacinaClick"/>
+                  <MenuItem fx:id="opcoes" mnemonicParsing="false" text="Open Cartao Vacina" onAction="#handleMenuVacinaClick"/>
                </items></Menu>
         <Menu mnemonicParsing="false" text="Help">
           <items>
