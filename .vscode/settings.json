@@ -3,8 +3,6 @@
   "java.project.outputPath": "bin",
   "java.project.referencedLibraries": {
     "include": ["lib/**/*.jar"],
-    "exclude": [
-      "c:\\Users\\hiani\\Desktop\\italo\\Download\\openjfx-21.0.2_windows-x64_bin-sdk\\javafx-sdk-21.0.2\\lib\\javafx-swt.jar"
-    ]
+    "exclude": []
   }
 }

@@ -78,7 +78,6 @@ public class VacinaController {
                 showItems.getRowConstraints().add(rowConstraints);
 
                 Vacina item = (Vacina) vacinasArray.get(i);
-                System.out.println(item.getId());
                 Label label = new Label(item.getNome());
                 label.setPrefHeight(34.0);
                 label.setPrefWidth(471.0);

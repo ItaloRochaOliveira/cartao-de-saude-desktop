@@ -11,18 +11,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CartaoVacinaController">
    <children>
-      <GridPane layoutX="23.0" layoutY="137.0" prefHeight="212.0" prefWidth="553.0">
+      <GridPane fx:id="showItems" layoutX="23.0" layoutY="137.0" prefHeight="122.0" prefWidth="553.0">
          <columnConstraints>
             <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="145.0" minWidth="92.0" prefWidth="92.0" />
             <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="500.0" minWidth="400.0" prefWidth="461.0" />
          </columnConstraints>
          <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -38,32 +34,26 @@
                   <Font name="Cambria" size="17.0" />
                </font>
             </Label>
-            <Label text="Vacina 1" GridPane.rowIndex="2">
+            <Label text="Vacina" GridPane.rowIndex="2">
                <font>
                   <Font name="Cambria" size="17.0" />
                </font>
             </Label>
-            <Label text="Vacina 2" GridPane.rowIndex="3">
+            <Label fx:id="cpfLabel" text="Resultado..." textFill="#757575" GridPane.columnIndex="1" >
                <font>
                   <Font name="Cambria" size="17.0" />
                </font>
             </Label>
-            <Label text="Vacina 3" GridPane.rowIndex="4">
+            <Label fx:id="nomeLabel" text="Resultado..." textFill="#757575" GridPane.columnIndex="1" GridPane.rowIndex="1" >
                <font>
                   <Font name="Cambria" size="17.0" />
                </font>
             </Label>
-            <Label text="Vacina 4" GridPane.rowIndex="5">
+            <Label fx:id="vacinaLabel" text="Resultado..." textFill="#757575" GridPane.columnIndex="1" GridPane.rowIndex="2" >
                <font>
                   <Font name="Cambria" size="17.0" />
                </font>
             </Label>
-            <TextField promptText="Resultado..." GridPane.columnIndex="1" />
-            <TextField promptText="Resultado..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField promptText="Resultado..." GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField promptText="Resultado..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField promptText="Resultado..." GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField promptText="Resultado..." GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
       <Text blendMode="SRC_ATOP" boundsType="LOGICAL_VERTICAL_CENTER" cache="true" cacheHint="SCALE" fill="#233dd0" layoutY="33.0" stroke="#d91111" strokeWidth="0.0" text="Pesquisa de Cartão de Vacina" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="600.0">
@@ -81,7 +71,7 @@
          </rowConstraints>
          <children>
             <TextField fx:id="pesquisa" prefHeight="25.0" prefWidth="290.0" promptText="Digite o CPF do Paciente..." />
-            <Button fx:id="pesquisabutton" mnemonicParsing="false" onAction="#pesquisar" text="Pesquisar" GridPane.columnIndex="1">
+            <Button fx:id="pesquisabutton" mnemonicParsing="false" onAction="#pesquisarItem" text="Pesquisar" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>

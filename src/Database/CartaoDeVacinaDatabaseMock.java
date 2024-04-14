@@ -1,20 +1,24 @@
 package Database;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import Models.CartaoDeVacina;
+import Models.Paciente;
+import java.util.Arrays;
 
 public class CartaoDeVacinaDatabaseMock {
+    private static PacienteDatabaseMock pacienteDatabaseMock = new PacienteDatabaseMock();
+
     private static ArrayList<CartaoDeVacina> cartoesDeVacina = new ArrayList<>(Arrays.asList(
-        new CartaoDeVacina("Lucas Assis"),
-        new CartaoDeVacina("Luiz Porto"),
-        new CartaoDeVacina("Felipe Ramos"),
-        new CartaoDeVacina("Yuri Aragão"),
-        new CartaoDeVacina("Louise Assunção"),
-        new CartaoDeVacina("Danilo Freitas"),
-        new CartaoDeVacina("Lavínia Souza"),
-        new CartaoDeVacina("Heloise de Paula")));
+        new CartaoDeVacina(1, "47872011239"),
+        new CartaoDeVacina(2, "40999937103"),
+        new CartaoDeVacina(3, "81521404143"),
+        new CartaoDeVacina(4, "94267504105"),
+        new CartaoDeVacina(5, "10074561162"),
+        new CartaoDeVacina(6, "17747403119"),
+        new CartaoDeVacina(7, "27017650131"),
+        new CartaoDeVacina(8, "09672791194")));
+   
 
     static {
         // Adicionando vacinas aos cartões de vacina
@@ -37,9 +41,9 @@ public class CartaoDeVacinaDatabaseMock {
         return cartoesDeVacina;
     }
 
-    public CartaoDeVacina searchCartaoDeVacina(String nomePaciente) {
+    public CartaoDeVacina searchCartaoDeVacina(String cpfPaciente) {
         for (CartaoDeVacina cartao : cartoesDeVacina) {
-            if (cartao.getNomePaciente().equalsIgnoreCase(nomePaciente)) {
+            if (cartao.getCpfPaciente().equalsIgnoreCase(cpfPaciente)) {
                 return cartao;
             }
         }
@@ -55,11 +59,29 @@ public class CartaoDeVacinaDatabaseMock {
     }
 
     public boolean adicionarVacinaAoCartao(String nomePaciente, String vacina) {
-        CartaoDeVacina cartaoDeVacina = searchCartaoDeVacina(nomePaciente);
-        if (cartaoDeVacina != null) {
-            cartaoDeVacina.adicionarVacina(vacina);
+        CartaoDeVacina cartaoDeVacinaExist = searchCartaoDeVacina(nomePaciente);
+
+        if (cartaoDeVacinaExist != null) {
+            cartaoDeVacinaExist.adicionarVacina(vacina);
             return true;
         }
+
         return false;
+    }
+
+    public boolean adicionarVacinaAoCartaoComCpf(String cpf, String vacina) {
+        Paciente paciente = pacienteDatabaseMock.searchPacienteCpf(cpf);
+
+        if (paciente != null) {
+            CartaoDeVacina cartaoDeVacina = new CartaoDeVacina(newId(), cpf);
+
+            cartoesDeVacina.add(cartaoDeVacina);
+        }
+
+        return false;
+    }
+
+    private int newId(){
+        return cartoesDeVacina.get(cartoesDeVacina.size() - 1).getId() + 1;
     }
 }
