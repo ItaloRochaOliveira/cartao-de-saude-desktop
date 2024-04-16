@@ -16,6 +16,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 
@@ -107,13 +108,15 @@ public class PacienteController {
     
 
     public void adicionarLinhasDinamicamente() {
+        System.out.println("Entrou");
+            // anchonPaneSearchOption.getChildren().clear();
         
             ArrayList<Paciente> pacientesArray = pacientesdatabaseMock.searchAllPacientes();
-            // ColumnConstraints columnConstraints = new ColumnConstraints();
-            // columnConstraints.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
-            // columnConstraints.setMinWidth(10.0);
-            // columnConstraints.setPrefWidth(100.0);
-            // showItems.getColumnConstraints().add(columnConstraints);
+            ColumnConstraints columnConstraints = new ColumnConstraints();
+            columnConstraints.setHgrow(javafx.scene.layout.Priority.SOMETIMES);
+            columnConstraints.setMinWidth(10.0);
+            columnConstraints.setPrefWidth(100.0);
+            showItems.getColumnConstraints().add(columnConstraints);
 
             showItems.prefHeight((pacientesArray.size() + 1) * 34);
 
@@ -139,17 +142,21 @@ public class PacienteController {
     }
 
     public void pesquisarItem(ActionEvent event) throws IOException{
-        Paciente pacientePesquisada = pacientesdatabaseMock.searchPaciente(pesquisa.getText());
+       if (!pesquisa.getText().isEmpty()) {
+            Paciente pacientePesquisada = pacientesdatabaseMock.searchPaciente(pesquisa.getText());
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/pacienteLayout/pacientePesquisaLayout.fxml"));
-        AnchorPane layout = loader.load();
-        
-        anchonPaneSearchOption.getChildren().clear();
-        anchonPaneSearchOption.getChildren().add(layout);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/pacienteLayout/pacientePesquisaLayout.fxml"));
+            AnchorPane layout = loader.load();
+            
+            anchonPaneSearchOption.getChildren().clear();
+            anchonPaneSearchOption.getChildren().add(layout);
 
-        PacienteController controller = loader.getController();
-        controller.setPacienteValues(pacientePesquisada.getCpf(), pacientePesquisada.getNome(), pacientePesquisada.getDataNascimento().toString(), pacientePesquisada.getCep(), pacientePesquisada.getIdade(), 
-        pacientePesquisada.getEndereco(), pacientePesquisada.getNacionalidade(), pacientePesquisada.getTelefone(), pacientePesquisada.getSexoBiologico(), pacientePesquisada.getEtnia(), pacientePesquisada.getEstadoCivil());
+            PacienteController controller = loader.getController();
+            controller.setPacienteValues(pacientePesquisada.getCpf(), pacientePesquisada.getNome(), pacientePesquisada.getDataNascimento().toString(), pacientePesquisada.getCep(), pacientePesquisada.getIdade(), 
+            pacientePesquisada.getEndereco(), pacientePesquisada.getNacionalidade(), pacientePesquisada.getTelefone(), pacientePesquisada.getSexoBiologico(), pacientePesquisada.getEtnia(), pacientePesquisada.getEstadoCivil());
+       } else {
+            adicionarLinhasDinamicamente();
+       }
 
     }
 
