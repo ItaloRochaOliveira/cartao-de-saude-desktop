@@ -56,6 +56,7 @@ public class VacinaController {
     
 
     public void adicionarLinhasDinamicamente() {
+            showItems.getChildren().clear();
         
             ArrayList<Vacina> vacinasArray = vacinasdatabaseMock.searchAllVacinas();
 
@@ -89,17 +90,21 @@ public class VacinaController {
     }
 
     public void pesquisarItem(ActionEvent event) throws IOException{
-        Vacina vacinaPesquisada = vacinasdatabaseMock.searchVacina(pesquisa.getText());
+        if (!pesquisa.getText().isEmpty()) {
+            Vacina vacinaPesquisada = vacinasdatabaseMock.searchVacina(pesquisa.getText());
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/vacinaLayout/vacinaPesquisaLayout.fxml"));
-        AnchorPane layout = loader.load();
-        
-        showItems.getChildren().clear();
-        showItems.getChildren().add(layout);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/vacinaLayout/vacinaPesquisaLayout.fxml"));
+            AnchorPane layout = loader.load();
+            
+            showItems.getChildren().clear();
+            showItems.getChildren().add(layout);
 
-        VacinaController controller = loader.getController();
-        controller.setVacinaValues(vacinaPesquisada.getNome(), vacinaPesquisada.getDescricao(), vacinaPesquisada.getLote(), vacinaPesquisada.getFabricante());
+            VacinaController controller = loader.getController();
+            controller.setVacinaValues(vacinaPesquisada.getNome(), vacinaPesquisada.getDescricao(), vacinaPesquisada.getLote(), vacinaPesquisada.getFabricante());
 
+        } else {
+            adicionarLinhasDinamicamente();
+        }
     }
 
     public void setVacinaValues(String nome, String descricao, String lote, String fabricante) {
